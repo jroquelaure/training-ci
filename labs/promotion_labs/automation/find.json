@@ -1,0 +1,16 @@
+{
+    "files": [{
+      "aql": {
+        "items.find": {
+        "repo": "conan-metadata",
+        "name" : { "$match" : "*.lock"},
+          "$and": [
+            { "dependency.module.build.name": "debian-app" },
+            { "dependency.module.build.number": "1" },
+            { "@profile": "release-gcc6" }
+          ]
+        }
+      },
+      "flat":"true"
+    }]
+  }
